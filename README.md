@@ -19,6 +19,11 @@ blogify/
       PostList.js
       PostDetail.js
       ...
+    layouts/
+      Overall.js
+      DashboardLayout.js
+      AuthLayout.js
+      ...
     pages/
       Home.js
       Post.js
@@ -52,13 +57,13 @@ To get started with the project, follow these steps:
 1. Clone the repository:
 
     ```bash
-        git clone https://github.com/mulfranck/blogify.git
+        git clone https://github.com/unigist/unigist-reactfrontend.git
     ```
 
 2. Install the dependencies:
 
     ```sh
-    cd blogify
+    cd unigist-reactfrontend
     npm install
     ```
 
