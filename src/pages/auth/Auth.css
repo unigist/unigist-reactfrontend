@@ -1,0 +1,5 @@
+#register-page a:hover,
+#login-page a:hover {
+    background-color: white;
+    color: rgba(44, 114, 245, 0.973) !important;
+}

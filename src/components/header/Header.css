@@ -1,0 +1,7 @@
+ul.dropdown-menu {
+    min-width: 123px !important;
+    max-width: 125px !important;
+    /* or
+    max-width: fit-content;
+    */
+}
