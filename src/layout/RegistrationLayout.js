@@ -1,8 +1,8 @@
 import { Link, Outlet } from "react-router-dom";
 
-import './RegistrationLayout.css';
+import './AuthLayout.css';
 
-const RegistrationLayout = (props) => {
+const AuthLayout = (props) => {
 
 
     return (
@@ -20,4 +20,4 @@ const RegistrationLayout = (props) => {
     )
 }
 
-export default RegistrationLayout;
+export default AuthLayout;
