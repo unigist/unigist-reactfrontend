@@ -35,7 +35,7 @@ const Header = () => {
                                     <i className='bi bi-person-fill-gear' />
                                 </Link>
                                 <ul className="dropdown-menu  position-absolute" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/account">Settings</Link></li>
+                                    <li><Link className="dropdown-item" to="/dashboard/account">Settings</Link></li>
                                     <li><hr className="dropdown-divider"/></li>
                                     <li><Link className="dropdown-item" to="/auth/login">Login</Link></li>
                                 </ul>
