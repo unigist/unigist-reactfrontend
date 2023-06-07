@@ -63,7 +63,7 @@ function App() {
         {/* Protected routes */}
         <Route path='dashboard' element={<ProtectedRouteLayout />}>
           <Route path='' element={<Dashboard articles={articles}/>} >
-            <Route path='articles' element={<Acticles articles={articles}/>} />
+            <Route path='' element={<Acticles />} />
             <Route path='comments' element={<Comments />} />
             <Route path='stats' element={<Stats />} />
           </Route>

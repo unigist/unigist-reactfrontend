@@ -1,9 +1,24 @@
 import './Header.css';
 
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Link, Navigate } from "react-router-dom";
 
 
 const Header = () => {
+    const [t, setT ] = useState(false);
+    const token = localStorage.getItem('token') ? true : false;
+
+    const logout = (e) => {
+        localStorage.clear();
+        setT(!t);
+    }
+
+    useEffect(() => {
+        return (() => {
+            setT(false)
+        })
+    }, [token])
+
     return (
         <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light px-4">
             <div className="container-fluid ">
@@ -27,19 +42,27 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/dashboard">My home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/auth/login">login</Link>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i className='bi bi-person-fill-gear' />
-                                </Link>
-                                <ul className="dropdown-menu  position-absolute" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/dashboard/account">Settings</Link></li>
-                                    <li><hr className="dropdown-divider"/></li>
-                                    <li><Link className="dropdown-item" to="/auth/login">Login</Link></li>
-                                </ul>
-                            </li>
+                            {
+                            !token ?
+
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/auth/login">login</Link>
+                                </li>
+                            :
+                                <li className="nav-item dropdown">
+                                    <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i className='bi bi-person-fill-gear' />
+                                    </Link>
+                                    <ul className="dropdown-menu  position-absolute" aria-labelledby="navbarDropdown">
+                                        <li><Link className="dropdown-item" to="/dashboard/account">Settings</Link></li>
+                                        <li><hr className="dropdown-divider"/></li>
+                                        <li>
+                                            <button onClick={logout} className="dropdown-item">Logout</button>
+                                            { t && <Navigate to='/' replace />}
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </span>
