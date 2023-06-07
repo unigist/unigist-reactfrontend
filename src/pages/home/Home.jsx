@@ -1,6 +1,6 @@
 import './Home.css';
 
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import SideBar from '../../components/sidebar/SideBar';
 import PostCard from '../../components/postcard/PostCard';
@@ -9,6 +9,8 @@ import PostCard from '../../components/postcard/PostCard';
 
 
 const Home = (props) => {
+    console.log(props.articles)
+    const { posts } = props.articles;
     return (
         <section className='container-fluid px-4' id='profile'>
             <div className="row align-items-start">
@@ -20,11 +22,11 @@ const Home = (props) => {
                     </SideBar>
                 </div>
                 <div className="col text-center">
-                    <PostCard />
-                    <PostCard />
-                    <PostCard />
+                    {posts.map((art, idx) =>
+                       posts &&  <PostCard key={idx} article={art} />
+                    )}
                 </div>
-                <div className="col-3">
+                <div className="col-4">
                     One of three columns
                 </div>
             </div>

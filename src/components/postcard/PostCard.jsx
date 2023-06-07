@@ -7,11 +7,8 @@ const PostCard = (props) => {
 
     let blogSlug = 'nigga'
 
-    console.log("post card props")
-    console.log(props.article.userId)
-
     return (
-        <Link to={`/blog/${blogSlug}`} className="card m-4 text-decoration-none text-dark row" id='post-card'>
+        <Link to={`/blog/${blogSlug}`} className="card m-3 text-decoration-none text-dark row" id='post-card'>
             <div className="row g-0">
                 <div className="col-md-4">
                     <img src="..." className="img-fluid rounded-start" alt="..." />
@@ -28,14 +25,14 @@ const PostCard = (props) => {
                             </p>
                             <p className="cart-text fs-5 m-0 d-flex align-items-center">
                                 {/* <button type="button" class="btn btn-primary position-relative"> */}
-                                <small class="bi bi-hand-thumbs-up small mx-1"></small>
+                                <small className="bi bi-hand-thumbs-up small mx-1"></small>
                                     {/* <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                         {reactions}
                                         <span class="visually-hidden">unread messages</span>
                                     </span> */}
                                 {/* </button> */} |
                                 <small className="bookmark ms-1">
-                                    <i class="bi bi-bookmark-plus"></i>
+                                    <i className="bi bi-bookmark-plus"></i>
                                 </small>
                             </p>
                         </div>

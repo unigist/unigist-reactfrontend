@@ -1,5 +1,5 @@
 import './Auth.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 
 
@@ -17,23 +17,41 @@ const Login = () => {
             username,
             password
         }
-        console.log(user);
 
-        fetch('ttp://127.0.0.1:8000/auth/login', {
+
+        fetch('https://dummyjson.com/auth/login', {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
-        }).then((res) => {
-            console.log(res);
-            if (res.status === 200) {
-                if (res.token) {
-                    let dateTodayString = new Date().toDateString();
-                    localStorage.setItem('token-'+dateTodayString, res.token);
-                    setAuthenticate(true);
-                }
+        })
+        .then(res => res.json())
+        .then(dt => {
+            if (dt?.username === user.username) {
+                setLoading(false)
+                setAuthenticate(true)
+                localStorage.setItem('user', JSON.stringify({
+                    username: dt.username,
+                    image: dt.image,
+                    id: dt.id
+                }))
+                localStorage.setItem('token', dt.token)
+            } else {
+                throw new Error('Invalid username')
             }
         })
+        .catch(err => console.log(err))
     }
+
+    useEffect(() => {
+        console.log('login page mounted');
+        let token = localStorage.getItem('token');
+        if (token) {
+            setAuthenticate(true)
+        }
+        return () => {
+            console.log('login page unmounted');
+        }
+    }, [])
 
 
     return (
@@ -59,7 +77,8 @@ const Login = () => {
                         <input type="submit" className={`btn btn-primary btn-lg`} disabled={loading} onClick={handleLogin} value={!loading ? 'Log in' : 'Logging in'}/>
                     </div>
                 </form>
-                {authenticate && <Navigate to="/profile" replace={true} />}
+
+                {authenticate && <Navigate to="/dashboard" replace={true} />}
         </section>
     )
 }

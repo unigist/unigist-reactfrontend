@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import OvarallLayout from './layout/OverallLayout';
 import AuthLayout from './layout/AuthLayout';
+import ProtectedRouteLayout from './layout/ProtectedRouteLayout';
 import Errors from './components/errors/Errors';
 
 import Home from './pages/home/Home';
@@ -59,14 +60,18 @@ function App() {
           {/* <Route path='about' element={<About />} /> */}
           <Route path='blog/:blogSlug' element={<ArticleDetail />}/>
 
-          <Route path='dashboard' element={<Dashboard />} >
-            <Route path='articles' element={<Acticles />} />
+        {/* Protected routes */}
+        <Route path='dashboard' element={<ProtectedRouteLayout />}>
+          <Route path='' element={<Dashboard articles={articles}/>} >
+            <Route path='articles' element={<Acticles articles={articles}/>} />
             <Route path='comments' element={<Comments />} />
             <Route path='stats' element={<Stats />} />
           </Route>
           <Route path='/dashboard/write-article' element={<WriteArticle />} />
           <Route path='/dashboard/account' element={<Account />} />
+          </Route>
         </Route>
+
         <Route path='auth/' element={<AuthLayout />}>
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register/>} />
