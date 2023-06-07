@@ -4,3 +4,9 @@
 #post-card img {
     height: 12rem;
 }
+
+#post-card .text__text--fixwidth {
+    width: 100%;
+    max-height: 62px !important;
+    overflow: hidden;
+}
