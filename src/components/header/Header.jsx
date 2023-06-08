@@ -20,13 +20,13 @@ const Header = () => {
     }, [token])
 
     return (
-        <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light px-4">
+        <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light px-4">
             <div className="container-fluid ">
                 <Link className="navbar-brand" to="/">Unigist</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                    <form className="d-flex align-items-start">
+                    <form className="d-none align-items-start">
                         <div className="input-group">
                             <input type="text" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="blog-search" />
                             <span className="input-group-text" id="blog-search">Q</span>

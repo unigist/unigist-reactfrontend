@@ -10,13 +10,13 @@ const PostCard = (props) => {
     return (
         <Link to={`/blog/${blogSlug}`} className="card m-3 text-decoration-none text-dark row" id='post-card'>
             <div className="row g-0">
-                <div className="col-md-4">
+                <div className="col-3 col-sm-4">
                     <img src="..." className="img-fluid rounded-start" alt="..." />
                 </div>
-                <div className="col-md-8">
+                <div className="col">
                     <div className="card-body text-start">
                         <h5 className="card-title flex-start text-start">{title}</h5>
-                        <p className="card-text text__text--fixwidth">{body}</p>
+                        <p className="card-text d-none d-sm-flex text__text--fixwidth">{body}</p>
                         <div className="p-0 d-flex align-items-center text-muted justify-content-between">
                             <p className="card-text m-0">
                                 <small className="date-published"> date | </small>

@@ -13,7 +13,7 @@ const Dashboard = () => {
     return (
         <section className='container-fluid px-4' id='profile'>
             <div className="row align-items-start">
-                <div className="col-2">
+                <div className="d-none">
                     <SideBar>
                         <Link className="nav-link" to="">
                             Article
@@ -26,12 +26,12 @@ const Dashboard = () => {
                         </Link>
                     </SideBar>
                 </div>
-                <div className="col text-center">
+                <div className="col-sm  text-center">
                     <Banner username={ user?.username } img={ user?.image }/>
 
                     <Outlet />
                 </div>
-                <div className="col-3">
+                <div className="d-none">
                     One of three columns
                 </div>
             </div>
