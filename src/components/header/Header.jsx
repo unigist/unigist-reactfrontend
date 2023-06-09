@@ -20,20 +20,21 @@ const Header = () => {
     }, [token])
 
     return (
-        <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light px-4">
-            <div className="container-fluid ">
+
+        <header className="navbar fixed-top navbar-expand-md navbar-light bg-light px-1 px-lg-4">
+            <div className="container-fluid">
                 <Link className="navbar-brand" to="/">Unigist</Link>
                 <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                    <form className="d-none align-items-start">
+                    <form className="d-none d-md-flex align-items-start">
                         <div className="input-group">
                             <input type="text" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="blog-search" />
                             <span className="input-group-text" id="blog-search">Q</span>
                         </div>
                     </form>
 
-                <span className='d-flex align-items-center'>
+                <div className='d-flex align-items-center'>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
@@ -65,9 +66,10 @@ const Header = () => {
                             }
                         </ul>
                     </div>
-                </span>
+                </div>
             </div>
-        </nav>
+        </header>
+
     )
 }
 
