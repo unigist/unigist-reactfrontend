@@ -1,6 +1,6 @@
-# Blogify Frontend
+# UGIST Frontend
 
-This is the React frontend for the Blogify web app.
+This is the React frontend for the Ugist web app.
 
 ## Folder Structure
 
@@ -76,7 +76,6 @@ To get started with the project, follow these steps:
 This will start the app in development mode and open it in your [default browser] at `http://localhost:3000`.
 
 The page will reload automatically when you make changes to the code.
-
 
 ## Available Scripts
 
