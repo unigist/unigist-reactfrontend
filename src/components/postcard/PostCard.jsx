@@ -8,7 +8,7 @@ const PostCard = (props) => {
     let blogSlug = 'nigga'
 
     return (
-        <Link to={`/blog/${blogSlug}`} className="card m-3 text-decoration-none text-dark row" id='post-card'>
+        <Link to={`/blog/${blogSlug}`} className="card mx-3 mb-3 text-decoration-none text-dark row" id='post-card'>
             <div className="row g-0">
                 <div className="col-3 col-sm-4">
                     <img src="..." className="img-fluid rounded-start" alt="..." />

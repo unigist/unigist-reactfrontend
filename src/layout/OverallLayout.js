@@ -6,7 +6,7 @@ const OvarallLayout = () => {
     return (
         <React.Fragment>
             <Header />
-            <main className="mt-5 pt-3">
+            <main className="mt-5 pt-1">
                 <Outlet />
             </main>
 

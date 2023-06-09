@@ -1,0 +1,8 @@
+#wb .full-height {
+    background-color: #ec9053;
+    height: calc(100vh - 52px) !important;
+}
+
+#wb .carousel-caption {
+    bottom: 37%;
+}
