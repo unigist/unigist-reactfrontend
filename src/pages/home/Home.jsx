@@ -31,10 +31,6 @@ const Home = (props) => {
                     {posts.map((art, idx) =>
                        posts &&  <PostCard key={idx} article={art} />
                     )}
-
-                    <div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatum est saepe magnam aliquam asperiores doloremque aspernatur ipsam, sunt quas dolore iusto reiciendis adipisci. Veritatis inventore atque voluptate at adipisci.
-                    </div>
                 </div>
 
             </div>
