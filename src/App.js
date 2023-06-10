@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import OvarallLayout from './layout/OverallLayout';
@@ -13,12 +13,11 @@ import Account from './pages/account/Account';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import WriteArticle from './pages/writePost/WritePost';
-import ArticleDetail from './pages/articleDetail/ArticleDetail';
+import PostDetail from './pages/postDetail/PostDetail';
 import Dashboard from './pages/dashboard/Dashboard';
 import Acticles from './pages/dashboard/sections/Acticles';
 import Comments from './pages/dashboard/sections/Comments';
 import Stats from './pages/dashboard/sections/Stats';
-import { useEffect } from 'react';
 
 
 const todayInStr = new Date().toDateString();
@@ -28,7 +27,6 @@ console.log(todayInStr, todayInNum)
 
 
 function App() {
-    const [isAuth, setIsAuth] = useState(false);
     const [articles, setArticles] = useState({posts: []});
 
 
@@ -58,7 +56,7 @@ function App() {
         <Route path='/' element={<OvarallLayout />}>
           <Route path='/' element={<Home articles={articles} />} />
           {/* <Route path='about' element={<About />} /> */}
-          <Route path='blog/:blogSlug' element={<ArticleDetail />}/>
+          <Route path='blog/:blogSlug' element={<PostDetail />}/>
 
         {/* Protected routes */}
         <Route path='dashboard' element={<ProtectedRouteLayout />}>
