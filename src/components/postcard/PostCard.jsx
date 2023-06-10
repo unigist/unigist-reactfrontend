@@ -39,11 +39,7 @@ const PostCard = (props) => {
                     </div>
                 </div>
             </div>
-
-
         </Link>
-
-
     )
 }
 
