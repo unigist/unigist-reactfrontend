@@ -95,9 +95,6 @@ const PostDetail = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="pb__content--comment">
-                        {/* ADD COMMENT POST SECTION */}
-                    </div>
                 </div>
 
                 {/* The Betwixt Icons */}
@@ -147,6 +144,12 @@ const PostDetail = () => {
 
                     </div>
                 </div>
+            </section>
+            {/* comment section */}
+            <section className="row ps-md-5 ms-md-4 ps-2">
+                <div className="col-12 col-md-11 col-lg-7 bp__content"></div>
+                <div className="col-12 col-md-1 bp__opts mt-0 mt-md-5 d-flex justify-content-end"></div>
+                <div className="col-12 order-first order-lg-0 col-lg-4 border-start mt-md-4 pt-2 mx-0 px-0 bp__ar"></div>
             </section>
        </article>
     )
