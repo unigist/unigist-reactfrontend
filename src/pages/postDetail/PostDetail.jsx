@@ -95,9 +95,6 @@ const PostDetail = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="pb__content--comment">
-                        {/* ADD COMMENT POST SECTION */}
-                    </div>
                 </div>
 
                 {/* The Betwixt Icons */}
@@ -116,7 +113,7 @@ const PostDetail = () => {
                 </div>
 
                 {/* The Right side bar */}
-                <div className="col-12 order-first order-lg-0 col-lg-4 border-start mt-md-4 pt-2 mx-0 px-0 bp__ar">
+                <div className="col-12 order-first order-lg-0 col-lg-4 border-start mt-md-4 pt-2 bp__ar">
                     <div className="bp__ar--tags px-3">
                         <h4 className="h4 mb-3">
                             Related tags:
@@ -147,6 +144,29 @@ const PostDetail = () => {
 
                     </div>
                 </div>
+            </section>
+            {/* comment section */}
+            <section className="row ps-md-5 ms-md-4 ps-2">
+                <div className="col-12 card mt-5 px-5 py-4 col-md-11 col-lg-7 bp__content">
+                    <h4 className="h4 card-title">
+                        <label htmlFor="comments">Comments</label>
+                    </h4>
+                    <div className="comment_list"></div>
+                    <div className=" d-flex gap-2">
+                        <div alt="logo" className='rounded-circle' style={{
+                            width: '35px',
+                            height: '35px',
+                            backgroundColor: '#1b1b1c',
+
+                        }} />
+                        <div className="col-11">
+                          <textarea className="form-control" name="" placeholder='Add to the disscussion' id="comments"></textarea>
+                        </div>
+                    </div>
+                </div>
+                {/* emypty */}
+                <div className="col-12 col-md-1 bp__opts mt-0 mt-md-5 d-flex justify-content-end"></div>
+                <div className="col-12 order-first order-lg-0 col-lg-4 border-start mt-md-4 pt-2 bp__ar"></div>
             </section>
        </article>
     )
